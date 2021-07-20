@@ -36,7 +36,7 @@ const allCategories = {
 
 describe('Pact Verification', () => {
 
-    const server = app.listen(7777, '0000',() => console.log('server running for api testing') )
+    const server = app.listen(6666, '0000',() => console.log('server running for api testing') )
 
     test('should validate the expectations of our consumer', () => {
         fetchList.mockReturnValue([mockedBlogpost, mockedBlogpost, mockedBlogpost])
@@ -50,9 +50,7 @@ describe('Pact Verification', () => {
 
         const opts = {
             provider: 'BlogTestingProvider',
-            providerBaseUrl: 'http://localhost:7777',
-           // pactBrokerUrl: process.env.PACT_BROKER_URL,
-          //  pactBrokerToken: process.env.PACT_BROKER_TOKEN,
+            providerBaseUrl: 'http://localhost:6666',
             pactUrls: [path.resolve(process.cwd(), 'src/__tests__/pact/blogtestingconsumer-blogtestingprovider.json')],
             publishVerificationResult: true,
             providerVersion: '1.0.0',

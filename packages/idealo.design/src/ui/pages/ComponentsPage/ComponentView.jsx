@@ -6,7 +6,7 @@ import Select from 'react-select';
 import {fetchComponents, fetchMap, fetchTags, updateComponentsTags} from "./component_data";
 import slugify from "slugify";
 
-class ComponentView extends React.Component {
+export class ComponentView extends React.Component {
 
     constructor(props) {
         super(props);
@@ -128,8 +128,8 @@ class ComponentView extends React.Component {
                     {this.state.filteredComponents.map((component) => (
                         <div className={s.item} key={component.id}>
                             <Checkbox className={s.logo}/>
-                            <h1 className={s.title}>{component.title}</h1>
-                            <h3 className={s.tags}>{component.tags}</h3>
+                            <h1 title='componentTitle' className={s.title}>{component.title}</h1>
+                            <h3 title='componentTags' className={s.tags}>{component.tags}</h3>
                         </div>
                     ))}
                 </div>

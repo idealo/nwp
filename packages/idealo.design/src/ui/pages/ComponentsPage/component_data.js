@@ -1,17 +1,19 @@
+import fetch from "node-fetch"
+
 const API_BASE = '';
 
-export async function fetchComponents() {
-    const resp = await fetch(`${API_BASE}/api/components`);
+export async function fetchComponents(base_url = API_BASE) {
+    const resp = await fetch(`${base_url}/api/components`);
     return await resp.json();
 }
 
-export async function fetchTags() {
-    const resp = await fetch(`${API_BASE}/api/tags`);
+export async function fetchTags(base_url = API_BASE) {
+    const resp = await fetch(`${base_url}/api/tags`);
     return await resp.json();
 }
 
-export async function fetchMap() {
-    const resp = await fetch(`${API_BASE}/api/map`);
+export async function fetchMap(base_url = API_BASE) {
+    const resp = await fetch(`${base_url}/api/map`);
     return await resp.json();
 }
 
